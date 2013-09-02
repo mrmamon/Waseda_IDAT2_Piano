@@ -654,7 +654,7 @@ int main(int argc, char* argv[])
 						rectangle( gameShow,Point( 460, 120),Point( 500, 240),Scalar( 255, 255, 0 ),-1,8 );
 						
 					}
-					else if(fingertips[p].x>207&&fingertips[p].x<237)
+					else if(fingertips[p].x>PointNormal[0].x&&fingertips[p].x<PointNormal[1].x)
 					{
 						if(touching[5]!=1)
 						{
@@ -663,7 +663,7 @@ int main(int argc, char* argv[])
 						}
 						highlight=0;	
 					}
-					else if(fingertips[p].x>237&&fingertips[p].x<267)
+					else if(fingertips[p].x>PointNormal[2].x&&fingertips[p].x<PointNormal[3].x)
 					{
 						if(touching[6]!=1)
 						{
@@ -673,7 +673,7 @@ int main(int argc, char* argv[])
 						highlight=1;
 						
 					}
-					else if(fingertips[p].x>267&&fingertips[p].x<297)
+					else if(fingertips[p].x>PointNormal[4].x&&fingertips[p].x<PointNormal[5].x)
 					{
 						if(touching[7]!=1)
 						{
@@ -682,7 +682,7 @@ int main(int argc, char* argv[])
 						}
 						highlight=2;
 					}
-					else if(fingertips[p].x>297&&fingertips[p].x<327)
+					else if(fingertips[p].x>PointNormal[6].x&&fingertips[p].x<PointNormal[7].x)
 					{
 						if(touching[8]!=1)
 						{
@@ -691,7 +691,7 @@ int main(int argc, char* argv[])
 						}
 						highlight=3;
 					}
-					else if(fingertips[p].x>327&&fingertips[p].x<357)
+					else if(fingertips[p].x>PointNormal[8].x&&fingertips[p].x<PointNormal[9].x)
 					{
 						if(touching[9]!=1)
 						{
@@ -700,7 +700,7 @@ int main(int argc, char* argv[])
 						}
 						highlight=4;
 					}
-					else if(fingertips[p].x>357&&fingertips[p].x<387)
+					else if(fingertips[p].x>PointNormal[10].x&&fingertips[p].x<PointNormal[11].x)
 					{
 						if(touching[10]!=1)
 						{
@@ -710,7 +710,7 @@ int main(int argc, char* argv[])
 							highlight=5;
 						
 					}
-					else if(fingertips[p].x>387&&fingertips[p].x<417)
+					else if(fingertips[p].x>PointNormal[12].x&&fingertips[p].x<PointNormal[13].x)
 					{
 						if(touching[11]!=1)
 						{
@@ -719,7 +719,7 @@ int main(int argc, char* argv[])
 						}
 							highlight=6;
 					}
-					else if(fingertips[p].x>417&&fingertips[p].x<447)
+					else if(fingertips[p].x>PointNormal[14].x&&fingertips[p].x<PointNormal[15].x)
 					{
 						if(touching[12]!=1)
 						{
@@ -762,35 +762,35 @@ int main(int argc, char* argv[])
 					{
 						touching[4]=0;
 					}
-					else if(fingertips[p].x>207&&fingertips[p].x<237)
+					else if(fingertips[p].x>PointNormal[0].x&&fingertips[p].x<PointNormal[1].x)
 					{
 						touching[5]=0;
 					}
-					else if(fingertips[p].x>237&&fingertips[p].x<267)
+					else if(fingertips[p].x>PointNormal[2].x&&fingertips[p].x<PointNormal[3].x)
 					{
 						touching[6]=0;
 					}
-					else if(fingertips[p].x>267&&fingertips[p].x<297)
+					else if(fingertips[p].x>PointNormal[4].x&&fingertips[p].x<PointNormal[5].x)
 					{
 						touching[7]=0;
 					}
-					else if(fingertips[p].x>297&&fingertips[p].x<327)
+					else if(fingertips[p].x>PointNormal[6].x&&fingertips[p].x<PointNormal[7].x)
 					{
 						touching[8]=0;
 					}
-					else if(fingertips[p].x>327&&fingertips[p].x<357)
+					else if(fingertips[p].x>PointNormal[8].x&&fingertips[p].x<PointNormal[9].x)
 					{
 						touching[9]=0;
 					}
-					else if(fingertips[p].x>357&&fingertips[p].x<387)
+					else if(fingertips[p].x>PointNormal[10].x&&fingertips[p].x<PointNormal[11].x)
 					{
 						touching[10]=0;
 					}
-					else if(fingertips[p].x>387&&fingertips[p].x<417)
+					else if(fingertips[p].x>PointNormal[12].x&&fingertips[p].x<PointNormal[13].x)
 					{
 						touching[11]=0;
 					}
-					else if(fingertips[p].x>417&&fingertips[p].x<447)
+					else if(fingertips[p].x>PointNormal[14].x&&fingertips[p].x<PointNormal[15].x)
 					{
 						//Sleep(20000);
 						touching[12]=0;
@@ -824,8 +824,8 @@ int main(int argc, char* argv[])
 		float notelenght = notewidth1-notewidth0;
 
 		for (int i =2;i<16;i+=2){
-			PointNormal[i]=Point(notewidth0+(notelenght*(i/2)),notehight1);
-			PointNormal[i+1]=Point(notewidth1+(notelenght*(i/2)),notehight2);
+			PointNormal[i]=Point(notewidth0+(notelenght*(i/2))+(3*(i/2)),notehight1);
+			PointNormal[i+1]=Point(notewidth1+(notelenght*(i/2))+(3*(i/2)),notehight2);
 		}
 
 		for (int i =0;i<16;i+=2){
